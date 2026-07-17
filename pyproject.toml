@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "saran"
+version = "0.1.0"
+description = "Self-Adapting Recovery Autonomous Network — a self-healing AI framework that inspects and repairs its own code."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "SARAN contributors" }]
+keywords = ["self-healing", "autonomous", "security", "static-analysis", "llm", "claude"]
+
+# Core framework has ZERO runtime dependencies — it runs fully offline with the
+# deterministic intelligence backend. The LLM backend is an optional extra.
+dependencies = []
+
+[project.optional-dependencies]
+claude = ["anthropic>=0.40"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+saran = "saran.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["saran*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

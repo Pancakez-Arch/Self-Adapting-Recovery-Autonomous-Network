@@ -1,0 +1,5 @@
+# Core SARAN has no required runtime dependencies.
+# Install the optional Claude backend for LLM-driven diagnosis and fixes:
+#   pip install anthropic
+# or install the package with the extra:
+#   pip install -e ".[claude]"
